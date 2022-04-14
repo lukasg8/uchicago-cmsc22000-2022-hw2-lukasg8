@@ -7,6 +7,7 @@
 
 #include "common.h"
 #include "point.h"
+#include "segment.h"
 
 /* A polygon in two-dimensional space */
 typedef struct {

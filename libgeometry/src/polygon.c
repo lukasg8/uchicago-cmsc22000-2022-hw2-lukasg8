@@ -108,12 +108,19 @@ int polygon_add_point(polygon_t *poly, point_t *p)
         new_seg1 = &poly->points[poly->n_points - 1];
         new_seg2 = p;
 
+        segment_t *seg1, *seg2;
+        seg1->p1 = new_seg1;
+        seg1->p2 = new_seg2;
+
         for(unsigned int i=0; i < poly->n_points - 1; i++)
         {
             cur_seg1 = &poly->points[i];
             cur_seg2 = &poly->points[i+1];
 
-            if(segment_intersect(cur_seg1, cur_seg2, new_seg1, new_seg2))
+            seg2->p1 = cur_seg1;
+            seg2->p2 = cur_seg2;
+
+            if(segment_intersect(seg2, seg1))
             {
                 error("Adding point creates segment (%.2f, %.2f) -> (%.2f, %.2f) "
                       "which intersects with (%.2f, %.2f) -> (%.2f, %.2f)",

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "point.h"
+#include "segment.h"
 
 Test(point, new)
 {
@@ -117,7 +118,11 @@ void check_intersect(double p1x, double p1y,
     point_init(&p2, p2x, p2y);
     point_init(&q2, q2x, q2y);
 
-    intersect = segment_intersect(&p1, &q1, &p2, &q2);
+    segment_t s0, s1;
+    segment_init(&s0,&p1,&q1);
+    segment_init(&s1,&p2,&q2);
+
+    intersect = segment_intersect(&s0,&s1);
 
     cr_assert_eq(intersect, expected,
                  "Segments (%.2f, %.2f) -> (%.2f, %.2f) and (%.2f, %.2f) -> (%.2f, %.2f) %s but "
