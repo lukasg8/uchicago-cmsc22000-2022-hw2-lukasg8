@@ -73,6 +73,7 @@ double point_distance(point_t *p1, point_t *p2)
 
 /* Given three colinear points p, q, r, the function checks if
    point q lies on line segment 'pr' */
+/*
 bool on_segment(point_t *p, point_t *q, point_t *r)
 {
     if (q->x == p->x && q->y == p->y)
@@ -87,7 +88,7 @@ bool on_segment(point_t *p, point_t *q, point_t *r)
 
     return false;
 }
-
+*/
 
 /* Finds the orientation of the ordered triplet (p, q, r).
  *
@@ -99,7 +100,7 @@ bool on_segment(point_t *p, point_t *q, point_t *r)
  *  - 1 if p, q, and r are clockwise
  *  - 2 if p, q, and r are counterclockwise
  */
-int orientation(point_t *p, point_t *q, point_t *r)
+int point_orientation(point_t *p, point_t *q, point_t *r)
 {
     // See https://www.geeksforgeeks.org/orientation-3-ordered-points/
     // for details of below formula.
@@ -113,6 +114,7 @@ int orientation(point_t *p, point_t *q, point_t *r)
 
 
 /* See point.h */
+/*
 bool segment_intersect(point_t *p1, point_t *q1, point_t *p2, point_t *q2)
 {
     // Find the four orientations needed for general and
@@ -143,6 +145,7 @@ bool segment_intersect(point_t *p1, point_t *q1, point_t *p2, point_t *q2)
 
     return false; // Doesn't fall in any of the above cases
 }
+*/
 
 
 

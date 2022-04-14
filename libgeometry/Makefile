@@ -10,7 +10,7 @@ STATIC_LIB = libgeometry.a
 LIBS = ${DYNAMIC_LIB} ${STATIC_LIB}
 LDLIBS = -lm
 
-SRCS = src/point.c src/polygon.c
+SRCS = src/point.c src/polygon.c src/segment.c
 OBJS = $(SRCS:.c=.o)
 
 .PHONY: all

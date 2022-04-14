@@ -64,18 +64,16 @@ int point_free(point_t *p);
  */
 double point_distance(point_t *p1, point_t *p2);
 
-
-/*
- * Determines whether two segments intersect
+/* Finds the orientation of the ordered triplet (p, q, r).
  *
  * Parameters:
- *  - p1, q1: Two points describing segment 1
- *  - p2, q2: Two points describing segment 2
+ *  - p, q, r: points
  *
- * Returns:
- *  - true if they intersect, false otherwise
+ * Return:
+ *  - 0 if p, q and r are colinear
+ *  - 1 if p, q, and r are clockwise
+ *  - 2 if p, q, and r are counterclockwise
  */
-bool segment_intersect(point_t *p1, point_t *q1, point_t *p2, point_t *q2);
-
+int point_orientation(point_t *p, point_t *q, point_t *r);
 
 #endif /* INCLUDE_POINT_H_ */
